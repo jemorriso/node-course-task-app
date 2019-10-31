@@ -13,7 +13,7 @@ router.post('/tasks', auth, async (req, res) => {
     });
 
     task.save().then(() => {
-        res.send(task);
+        res.status(201).send(task);
     }).catch((e) => {
         // Bad Request code (eg password too short)
         res.status(400).send(e);
